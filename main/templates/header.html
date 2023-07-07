@@ -1,0 +1,84 @@
+
+<header class="header">
+    <a href="" class="logo">
+        <img src="{{info.logo.url}}" width="80px" height="80px" alt="">
+    </a>
+    
+    <nav class="navbar">
+        {% if user.is_authenticated %}
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'menu' %}">Menu</a>
+        <a href="{% url 'products' %}">Products</a>
+        <a href="/blog.html">Blogs</a>
+    </nav>
+
+    <nav class="navbar">
+        <a href="{% url 'signout' %}">Logout</a>
+    </nav>
+
+    <div class="icons">
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+
+    <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fas fa-search"></label>
+    </div>
+
+    <div class="cart-items-container">
+        <div class="cart-item">
+            <span class="fas fa-times"></span>
+            <img src="img/coffee 1.jpg" alt="">
+            <div class="content">
+                <h3>cart item 01</h3>
+                <div class="price">$15.99/-1</div>
+            </div>
+        </div>
+        <div class="cart-item">
+            <span class="fas fa-times"></span>
+            <img src="img/coffee 2.jpg" alt="">
+            <div class="content">
+                <h3>cart item 02</h3>
+                <div class="price">$15.99/-1</div>
+            </div>
+        </div>
+        <div class="cart-item">
+            <span class="fas fa-times"></span>
+            <img src="img/coffee 3.jpg" alt="">
+            <div class="content">
+                <h3>cart item 03</h3>
+                <div class="price">$15.99/-1</div>
+            </div>
+        </div>
+        <div class="cart-item">
+            <span class="fas fa-times"></span>
+            <img src="img/coffee 4.jpg" alt="">
+            <div class="content">
+                <h3>cart item 04</h3>
+                <div class="price">$15.99/-1</div>
+            </div>
+        </div>
+        <a href="" class="btn">checkout now</a>
+    </div>
+    {% else %}
+
+    <nav class="navbar">
+        <a href="{% url 'signin' %}">Login</a>
+        <a href="{% url 'register' %}">Sign Up</a>
+    </nav>
+    
+    {% endif %}
+   
+</header>
+   <!-- pop up  -->
+   {% for item in messages %}
+    <div class="alert alert-success alert-dismissible fade show text-center mb-0" role="alert">
+        <strong>{{item|title}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+   {% endfor %}
+  
+       <!-- pop up done  -->

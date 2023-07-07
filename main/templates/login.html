@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %} Login {% endblock title %}
+
+
+<!-- header  -->
+{% block header %}
+
+   <header class="header">
+
+        <a href="" class="logo">
+            <img src="{{info.logo.url}}" width="80px" height="80px" alt="">
+        </a>
+
+        <nav class="navbar">
+            <a href="{% url 'register' %}">signup</a>
+        </nav>
+
+    </header>
+
+
+{% endblock header %}
+ <!-- header done  -->
+
+
+
+    <!-- signin section  -->
+    {% block content %}
+
+    <div class="wrapper-wrap">
+        <h1 class="form-title">Login</h1>
+
+        <form action="{% url 'signin' %}" method='POST'>
+            {% csrf_token %}
+            <div class="main-user-info">
+
+                <div class="user-input-box">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter usernames" >
+                </div>
+               
+                <div class="user-input-box">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password" >
+                </div>
+    
+                <div class="form-submit-btn">
+                    <input type="submit" value="Login">
+                </div>
+            </div>
+             
+        </form>
+    </div>
+
+    {% endblock content %}
+    <!-- signin section done  -->
+
+  
+  
+
+     <!-- footer  -->
+
+     {% block footer %} {% include 'footer.html' %} {% endblock footer %}
+
+     <!-- footer done  -->
+
+  

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+
+    <!-- font cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- custom css file  -->
+    <link rel="stylesheet" href="{% static '' %}css/style.css">
+    <link rel="stylesheet" href="{% static '' %}css/review.css">
+</head>
+<body>
+    <!-- header  -->
+   {% block header  %}{% endblock header %}
+    <!-- header done  -->
+
+    <!-- home section  -->
+    {% block banner %}{% endblock banner %}
+    <!-- home section done  -->
+
+    <!-- about section  -->
+    {% block about_front %}{% endblock about_front %}
+    <!-- about section done  -->
+
+
+    <!-- review section  -->
+    {% block review %}{% endblock review %}
+    <!-- review section done  -->
+
+    <!-- contact  -->
+    
+    {% block contact %}{% endblock contact %}
+
+    <!-- contact done  -->
+
+     <!-- content  -->
+    {% block content %}{% endblock content %}
+    <!-- content done  -->
+
+     <!-- footer  -->
+
+     {% block footer %}{% endblock footer %}
+
+
+     <!-- footer done  -->
+
+    
+
+
+
+    <!-- custom js file  -->
+    <script src="js/script.js"></script>
+</body>
+</html>
